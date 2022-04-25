@@ -107,6 +107,44 @@ print_r(array_map("myfunction",$colors));
 echo "<br>";
 echo str_repeat("-",50)."<br>";
 // 10.	Write a PHP function to change the following array's and convert all the strings to lower case. 
-function 
+function changeToLowerCase($v){
+    $v=strtolower($v);
+    return $v."<br>";
+}
+print_r(array_map("changeToLowerCase",$colors));
+/////////////////////////////////////
+echo "<br>";
+echo str_repeat("-",50)."<br>";
+// 11.	 Write a PHP script which displays all the numbers between 200 and 250 that are divisible by 4.
+echo implode(",",range(200,250,4))."\n";
+/////////////////////////////////////
+echo "<br>";
+echo str_repeat("-",50)."<br>";
+// 12.	Write a PHP script to get the shortest/longest string length from an array. 
+$words =  array("abcd","abc","de","hjjj","g","wer");
+$new_array = array_map('strlen', $words);
+echo "The shortest array length is " . min($new_array) .
+". The longest array length is " . max($new_array).'.';
+/////////////////////////////////////
+echo "<br>";
+echo str_repeat("-",50)."<br>";
+// 13.	Write a PHP script to generate unique random 10 numbers within a specific range. 
+$n=range(11,20);
+shuffle($n);
+for ($x=0; $x< 10; $x++)
+{
+echo $n[$x].' ';
+}
+echo "\n";
+/////////////////////////////////////
+echo "<br>";
+echo str_repeat("-",50)."<br>";
+// 14.	Write a PHP script that returns the lowest integer in the array  that is not 0. 
+
+function min_values_not_zero(Array $values) 
+{
+return min(array_diff(array_map('intval', $values), array(0)));
+}
+print_r(min_values_not_zero(array( 2, 0, 10, 12, 6))."\n");
 
 ?>
