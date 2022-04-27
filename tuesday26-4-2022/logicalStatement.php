@@ -96,7 +96,10 @@ function largest($x, $y, $z) {
  echo "<br>".str_repeat("*--*--*",15)."<br>";
 //////////////////////
 // 8.	Write PHP script to calculate the monthly electricity bill according to these rules
-
+// a.	For first 50 units – 2.50 JOD/Unit
+// b.	For next 100 units – 5.00 JOD/Unit
+// c.	For next 100 units – 6.20 JOD/Unit
+// d.	For units above 250 – 7.50 JOD/Unit
 
 
 
@@ -105,7 +108,10 @@ function largest($x, $y, $z) {
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  ////////////////////// 
 //  9.	 Write php script to make a calculator, the calculator should contain the four main operations 
-
+// e.	Addition
+// f.	Subtraction
+// g.	Multiplication
+// h.	Division
 
 
 
@@ -114,6 +120,8 @@ function largest($x, $y, $z) {
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  //////////////////////
 //  10.	Write php script to check if a person is eligible to vote, minimum age required for voting is 18.
+// Sample Input: 15
+// Sample Output: ‘is no eligible to vote’
 
 
 
@@ -123,13 +131,28 @@ function largest($x, $y, $z) {
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  //////////////////////
 //  11.	Write php script  to check whether a number is positive, negative or zero
+// Sample Input: -60
+// Sample Output: ‘Negative’
+
  
- 
+
+
+
+
  
  ///////////////////////
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  //////////////////////
 //  12.	Write a PHP to find the grade for the student, after calculating the average of his score in all the subject 
+
+// Sample Inputs: [60,86,95,63,55,74,79,62,50]
+// Sample Output: ‘D’
+// <60	F
+// <70	D
+// <80	C
+// <90	 B
+// <100 A
+
 
 
 
