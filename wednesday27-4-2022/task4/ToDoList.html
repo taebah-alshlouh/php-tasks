@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+       form{
+           margin: 5% 0% 5% 5%;
+           width: 80%;
+       } 
+       input{
+          width: 30%;
+          height: 6vh;
+           border: 2px solid cornflowerblue;
+           border-radius: 8px;
+           padding-left: 2%;
+       }
+       #sub{
+           width: 10%;
+           height: 6.5vh;
+           background-color: cornflowerblue;
+           border: 2px solid cornflowerblue;
+           border-radius: 8px;
+           color: aliceblue;
+       }
+    </style>
+</head>
+<body>
+    <form action="ToDoList.php" method="post">
+          <input type="text" name="task">
+           <input type="submit" value="Add task" id="sub">
+    </form>
+</body>
+</html>

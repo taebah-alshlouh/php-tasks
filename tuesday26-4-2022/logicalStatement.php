@@ -100,8 +100,12 @@ function largest($x, $y, $z) {
 // b.	For next 100 units – 5.00 JOD/Unit
 // c.	For next 100 units – 6.20 JOD/Unit
 // d.	For units above 250 – 7.50 JOD/Unit
-
-
+function monthly_electricity_bill($units){
+if ($units ==50) {
+    # code...
+}
+}
+monthly_electricity_bill($units)
 
 
 ///////////////////////
