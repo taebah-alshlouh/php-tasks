@@ -101,12 +101,28 @@ function largest($x, $y, $z) {
 // c.	For next 100 units – 6.20 JOD/Unit
 // d.	For units above 250 – 7.50 JOD/Unit
 function monthly_electricity_bill($units){
-if ($units ==50) {
-    # code...
-}
-}
-monthly_electricity_bill($units)
 
+if ($units <=50) {
+    $units=$units*2.50;
+    echo "The total is:".$units."<br>";
+}
+else if($units>50 && $units <=100){
+    $units=$units*5.00;
+    echo "The total is:".$units."<br>";
+}
+elseif($units>100 && $units <=250){
+    $units=$units*6.20;
+    echo "The total is:".$units."<br>";
+}else{
+    $units=$units*7.50;
+    echo "The total is:".$units."<br>";
+}
+}
+monthly_electricity_bill(50);
+monthly_electricity_bill(100);
+monthly_electricity_bill(101);
+monthly_electricity_bill(51);
+monthly_electricity_bill(251);
 
 ///////////////////////
  echo "<br>".str_repeat("*--*--*",15)."<br>";
@@ -117,9 +133,33 @@ monthly_electricity_bill($units)
 // g.	Multiplication
 // h.	Division
 
+function calculater($num1,$operation,$num2){
+    $calclate;
+switch ($operation) {
+    case '+':
+        $calclate=$num1+$num2;
+        echo "The result of the addition operation is:".$calclate."<br>";
+        break;
+    case '-':
+        $calclate=$num1-$num2;
+        echo "The result of the Subtraction operation is:".$calclate."<br>";
+        break;
+    case '*':
+        $calclate=$num1*$num2;
+        echo "The result of the Multiplication operation is:".$calclate."<br>";
+        break;
+     case '/':
+        $calclate=$num1/$num2;
+        echo "The result of the Division operation is:".$calclate."<br>";
+        break;
+}
+}
 
+calculater(5,"+",5);
+calculater(7,"-",2);
+calculater(4,"*",2);
+calculater(7,"/",2);
 
- 
  ///////////////////////
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  //////////////////////
@@ -127,10 +167,17 @@ monthly_electricity_bill($units)
 // Sample Input: 15
 // Sample Output: ‘is no eligible to vote’
 
+function check_voteAge($age){
+    if ($age>= 18) {
+        echo "is eligible to vote"."<br>";
+    }
+    else{
+        echo "is no eligible to vote"."<br>";
+    }
+}
+check_voteAge(18);
+check_voteAge(17);
 
-
-
- 
  ///////////////////////
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  //////////////////////
@@ -138,8 +185,21 @@ monthly_electricity_bill($units)
 // Sample Input: -60
 // Sample Output: ‘Negative’
 
- 
-
+function number_check($number){
+  if($number==0){
+      echo "Zero"."<br>";
+  }
+  elseif ($number>0) {
+    echo "positive"."<br>";
+  }
+  elseif($number<0)
+  {
+    echo "negative"."<br>";
+  }
+} 
+number_check(-60);
+number_check(0);
+number_check(60);
 
 
 
@@ -157,10 +217,37 @@ monthly_electricity_bill($units)
 // <90	 B
 // <100 A
 
+function grade($arr){
+    $sum=array_sum($arr);
+    $num=count($arr);
+    $average=($sum)/$num;
+    $grade;
+  if ($average<60) {
+    $grade="F";
+    echo "The Grade is: ".$grade."<br>";
+  }
+  elseif($average<70){
+  $grade="D";
+  echo "The Grade is: ".$grade."<br>";
+  }
+  elseif($average<80){
+    $grade="C";
+    echo "The Grade is: ".$grade."<br>";
+    }
+  elseif($average<90){
+      $grade="B";
+      echo "The Grade is: ".$grade."<br>";
+        }
+  elseif($average<100){
+    $grade="A";
+    echo "The Grade is: ".$grade."<br>";
+    }   
+}
 
-
-
-
+grade(array(60,86,95,63,55,74,79,62,50));
+grade(array(81,92,85,89,87,84,86,82,86));
+grade(array(95,92,95,91,98,94,96,94,93));
+grade(array(81,78,60,87,77,60,86,65,86));
  ///////////////////////
  echo "<br>".str_repeat("*--*--*",15)."<br>";
  //////////////////////

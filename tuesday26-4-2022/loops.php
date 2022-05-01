@@ -1,5 +1,5 @@
 <?php
-// 1.	Create a script that displays 1-2-3-4-5-6-7-8-9-10 on one line. There will be no dash (-) at the start and end position. 
+// 1.	Create a script that displays 1-2-3-4-5-6-7-8-9-10 on one line. There will be no dash (-) at the start and end position. Expected Output: 1-2-3-4-5-6-7-8-9-10
 for($x=1; $x<=10; $x++)
 {
  if($x< 10)
@@ -14,49 +14,106 @@ for($x=1; $x<=10; $x++)
 ////////////////////
 echo "<br>".str_repeat("*",50)."<br>";
 /////////////////////
-// 2.	Create a script using a for loop to add all the integers between 0 and 30 and display the total. 
+// 2.	Create a script using a for loop to add all the integers between 0 and 30 and display the total.
+// Expected Output:  total as a number 
 $sum = 0;
 for($x=1; $x<=30; $x++)
 {
 $sum +=$x;
 }
-echo "The sum of the numbers 0 to 30 is $sum"."\n";
+echo "The sum of the numbers from '0' to '30' is : ($sum)"."\n";
 /////////////////////////
 echo "<br>".str_repeat("*",50)."<br>";
 /////////////////////////
 // 3.	Create a script to generate the following pattern, using the nested for loop. 
-
-for ($i=1; $i <=5 ; $i++) {
-  $letters='A'; 
-  for ($n=1; $n <=4 ; $n++) { 
-      echo $letters++;
+// Expected Output:
+// A A A A A 
+// A A A B B 
+// A A C C C 
+// A D D D D 
+// E E E E E
+for ($i=0; $i <5 ; $i++) {
+  for ($n=0; $n <5 ; $n++) { 
+      if($i == 1 && $n>=3)
+       {
+      echo " B ";          
+       }
+       elseif($i == 2 && $n>=2)
+       {
+         echo " C ";
+       }
+       elseif($i == 3 && $n>=1)
+       {
+         echo " D ";
+        }
+       elseif($i == 4)
+       {
+        echo " E ";
+       }
+       else
+       {
+        echo " A ";
+       }    
   }
-  echo $letters."<br>";
-}
-////////////////
-echo "<br>".str_repeat("*",50)."<br>";
-////////////////
-// 4.	Create a script to generate the following pattern, using the nested for loop. 
-$n=1;
-for ($i=0; $i <5 ; $i++) { 
-   echo $n."   ";
-  for ($c=0; $c <4 ; $c++) { 
-    echo $n."  ";
-  }
-  $n++;
   echo "<br>";
 }
 
+////////////////
+echo "<br>".str_repeat("*",50)."<br>";
+////////////////
+// 4.	Create a script to generate the following pattern, using the nested for loop.
+// Expected Output:
+// 1 1 1 1 1 
+// 1 1 1 2 2 
+// 1 1 3 3 3 
+// 1 4 4 4 4 
+// 5 5 5 5 5
+for ($i=0; $i < 5  ; $i++) { 
 
+  for ($x=0; $x < 5 ; $x++) { 
+      if($i == 1 && $x>=3)
+      {
+          echo " "."2"." ";
+      }
+      elseif($i == 2 && $x>=2)
+      {
+          echo " "."3"." ";
+      }
+      elseif($i == 3 && $x>=1)
+      {
+          echo " "."4"." ";
+      }
+      elseif($i == 4 )
+      {
+          echo " "."5"." ";
+      }
+      else
+      {
+          echo " "."1"." ";
+      }
+  }
+  echo "<br>";
+}
 ////////////////
 echo "<br>".str_repeat("*",50)."<br>";
 ////////////////
 // 5.	Create a script to generate the following pattern, using the nested for loop. 
-$n=1;
-for ($i=0; $i <5 ; $i++) { 
-   echo $n."   ";
-  for ($c=0; $c <4 ; $c++) { 
-    echo "0";
+// Expected Output:
+// 1 0 0 0 0 
+// 0 2 0 0 0 
+// 0 0 3 0 0 
+// 0 0 0 4 0 
+// 0 0 0 0 5
+for ($i=1; $i <=5 ; $i++) { 
+  for ($c=1; $c <=5 ; $c++) { 
+    if ($c==$i) {
+      echo $i;
+    }
+    else
+    {
+      echo " 0 ";
+    }
+    
   }
   $n++;
   echo "<br>";
@@ -137,6 +194,12 @@ echo "<br>".str_repeat("*",50)."<br>";
  echo "<br>".str_repeat("*",50)."<br>";
   ///////////////////////
 //  11.	Write a PHP program to generate and display the first n lines of a Floyd triangle
+// Sample output:
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
 $n=5;
 $temp=1;
 for ($i=$n; $i > 0; $i--) {
@@ -146,44 +209,59 @@ for ($i=$n; $i > 0; $i--) {
   }
   echo "<br>";
 }
-
 /////////////////
 echo "<br>".str_repeat("*",50)."<br>";
 /////////////////
 // 12.	Write a PHP program to print the following pattern. 
+// Expected Output:
+//      A 
+//     A B 
+//    A B C 
+//   A B C D 
+//  A B C D E 
+//   A B C D 
+//    A B C 
+//     A B 
+//      A
 
-
-
-function print_pattern($num)
-{
-// Outer loop handles number of rows
-for ($i = 1; $i <= $num; $i++)
-{
-// inner loop handles indentation
-for($k = $num; $k > $i; $k-- )
-{
-// Print spaces
-echo "  ";
+$space = 0;
+$letters = 4;
+for ($i=0; $i < 5 ; $i++) { 
+ echo "<pre>";
+    for ($x=$space; $x < 4; $x++ ) { 
+       echo " ";
+       
+    }
+    $letter = "A";
+    for ($y=$letters; $y <=4 ; $y++) { 
+        
+        
+        echo $letter . " ";
+        $letter++;
+    }
+    echo "</pre>";
+ 
+    $space++;
+    $letters--;
 }
-// inner loop handles number of stars
-for($j = 1; $j <= $i; $j++ )
-{
-// Print characters
-echo chr(64+$j)." ";
-}
-for($j = $i-1; $j >= 1; $j-- )
-{
-// Print characters
-echo chr(64+$j)." ";
-}
-// go to new line after each row pattern is printed
-echo "<br>";
-}
-}
-//Call function and send number of lines as parameter
-$num = 5;
-print_pattern($num);
-
+$space1 = 0;
+$letters1 = 3;
+for ($i=0; $i < 5 ; $i++) { 
+    echo "<pre>";
+       for ($x=$letters1; $x < 4; $x++ ) { 
+          echo " ";
+          
+       }
+       $letter = "A";
+       for ($y=$space1; $y <=3 ; $y++) { 
+           echo $letter . " ";
+           $letter++;
+       }
+       echo "</pre>";
+    
+       $space1++;
+       $letters1--;
+   }
 
 /////////////////
 echo "<br>".str_repeat("*",50)."<br>";
