@@ -12,7 +12,7 @@
 // setcookie("user", "Taebah", time()- (60), "/",true,true);
 
 
-setcookie("user","Taebah",time()+(120),"/","",true,true);
+setcookie("user","Taebah",time()+(60),"/","",true,true);
 echo $_COOKIE["user"]."<br>";
 echo isset($_COOKIE["user"]);
 
